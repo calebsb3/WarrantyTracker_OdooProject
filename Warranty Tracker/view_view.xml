@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This is something for xml-->
+
+
+<!--This creates a menu for the people to click on-->
+<odoo> <!--Make sure to import Odoo somehow-->
+  <data>
+    <record id="action_view_warranty" model="ir.ui.view">
+      <field name="name">warranty.warranty.form</field>
+      <field name="model">warranty.warranty</field>
+      <field name="priority" eval="8"/>
+      <field name="arch" type="xml">
+        <form string="warranty_view">
+          <header>
+            <field name="name"/>
+          </header>
+          <sheet>
+            <field name="id_tag"/>
+            <field name="purchase_date"/>
+            <field name="length_of_warranty"/>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    
+    <menuitem id = "Warranty_Name" name = "Warranty Name" action="action_view_warranty"/>
+    <!--Id is for reference. name is what will appear on the screen... I think-->
+  </data>
+</odoo>
